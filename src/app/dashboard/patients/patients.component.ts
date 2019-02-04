@@ -8,11 +8,13 @@ import { PatientService } from '../shared/patient.service';
 })
 export class PatientsComponent implements OnInit {
 
+  patients: string[];
   patientDetails: boolean;
   constructor(private patientService: PatientService) { }
 
   ngOnInit() {
     this.patientDetails = false;
+    this.patients = [ 'Amit', 'Kumar', 'Saha'];
   }
 
   openPatientDetails(value) {

@@ -14,11 +14,26 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Log Out</a>
         </li>
-       
+
       </ul>
     </div>
   </nav>
-<input type="button" value='Detais' (click)='openPatientDetails(1)' />
-<div *ngIf='patientDetails'>
-  <app-patientsdetails></app-patientsdetails>
-</div>
+
+  <div class="row">
+    <div class="col-md-3 col-ls-4">
+        <div class="list-group">
+            <div  class="list-group-item list-group-item-action disabled list-header">
+              Patient List
+            </div>
+            <button type="button" class="list-group-item list-group-item-action" *ngFor="let patient of patients" (click)='openPatientDetails(patient)'>
+              {{patients}}
+            </button>
+          </div>
+    </div>
+    <div class="col-md-9  col-ls-8" *ngIf='patientDetails'>
+    <app-patientsdetails></app-patientsdetails>
+
+    </div>
+
+  </div>
+
