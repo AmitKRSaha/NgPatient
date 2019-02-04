@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientService } from '../shared/patient.service';
+import { Patient } from '../shared/patient';
 
 @Component({
   selector: 'app-patients',
@@ -8,18 +9,18 @@ import { PatientService } from '../shared/patient.service';
 })
 export class PatientsComponent implements OnInit {
 
-  patients: string[];
+  patients: any[];
   patientDetails: boolean;
   constructor(private patientService: PatientService) { }
 
   ngOnInit() {
     this.patientDetails = false;
-    this.patients = [ 'Amit', 'Kumar', 'Saha'];
+    this.patientService.getPatients().subscribe(data => {this.patients = data; });
   }
 
   openPatientDetails(value) {
     this.patientDetails = true;
-    this.patientService.patientById(value);
+    // this.patientService.patientById(value);
   }
 
 }

@@ -25,9 +25,11 @@
             <div  class="list-group-item list-group-item-action disabled list-header">
               Patient List
             </div>
-            <button type="button" class="list-group-item list-group-item-action" *ngFor="let patient of patients" (click)='openPatientDetails(patient)'>
-              {{patients}}
-            </button>
+            <div *ngFor="let patient of patients">
+               <button type="button" class="list-group-item list-group-item-action"  (click)='openPatientDetails(patient)'>
+                {{patient.Name}}
+              </button></div>
+
           </div>
     </div>
     <div class="col-md-9  col-ls-8" *ngIf='patientDetails'>

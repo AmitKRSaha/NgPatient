@@ -12,7 +12,7 @@ export class PatientsdetailsComponent implements OnInit {
   constructor(private patientService: PatientService) { }
 
   ngOnInit() {
-     this.patientService.missionAnnounced$.subscribe(x => this.id = x);
+    //  this.patientService.missionAnnounced$.subscribe(x => this.id = x);
   }
 
 }

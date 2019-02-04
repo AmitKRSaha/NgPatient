@@ -1,27 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Observable, of   } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
+
+import { Patient } from './patient';
+import { pipe } from '@angular/core/src/render3';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient) { }
 
   // Observable string sources
-  private missionAnnouncedSource = new Subject<string>();
-  private missionConfirmedSource = new Subject<string>();
+  private patients = new Subject<string>();
+  private apiHost = '../../../assets/patient-detail.json';
+  private patientdetail: Patient[];
 
   // Observable string streams
-  missionAnnounced$ = this.missionAnnouncedSource.asObservable();
-  missionConfirmed$ = this.missionConfirmedSource.asObservable();
+  patients$ = this.patients.asObservable();
 
   // Service message commands
-  patientById(id: number) {
-    this.missionAnnouncedSource.next(id.toString());
+  getPatients(): Observable<Patient[]> {
+    return this.http.get<Patient[]>(`${this.apiHost}`);
+
   }
 
-  // confirmMission(astronaut: string) {
-  //   this.missionConfirmedSource.next(astronaut);
+  // patientById(id: number):  Observable<Patient[]> {
+  //   return of('abc');
   // }
+
+
 }
