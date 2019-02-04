@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PatientService } from '../shared/patient.service';
 
 @Component({
   selector: 'app-patients',
@@ -8,14 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class PatientsComponent implements OnInit {
 
   patientDetails: boolean;
-  constructor() { }
+  constructor(private patientService: PatientService) { }
 
   ngOnInit() {
     this.patientDetails = false;
   }
 
-  openPatientDetails() {
+  openPatientDetails(value) {
     this.patientDetails = true;
+    this.patientService.patientById(value);
   }
 
 }
