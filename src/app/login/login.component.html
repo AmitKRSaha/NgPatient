@@ -1,6 +1,20 @@
-<h2>LOGIN</h2>
-<p>{{message}}</p>
-<p>
-  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-</p>
+<div class="login">
+  <h2>LOGIN</h2>
+  <p>{{message}}</p>
+  <div class="formcontrol">
+    <p> User Name</p>
+    <div>
+      <input  type="email" placeholder="a@mail.com" required>
+    </div>
+    <div>
+      <input type="password" placeholder="12345" required>
+    </div>
+
+
+    <div class="btn_login">
+      <p (click)="login()" *ngIf="!authService.isLoggedIn">Login</p>
+    </div>
+    <!-- <button (click)="login()" *ngIf="!authService.isLoggedIn">Login</button>
+    <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button> -->
+  </div>
+</div>
