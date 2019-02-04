@@ -1,3 +1,7 @@
 <p>
   patients works!
 </p>
+<input type="button" value='Detais' (click)='openPatientDetails()' />
+<div *ngIf='patientDetails'>
+  <app-patientsdetails></app-patientsdetails>
+</div>

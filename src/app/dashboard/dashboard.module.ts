@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { PatientsComponent } from './patients/patients.component';
+import { PatientsdetailsComponent } from './patientsdetails/patientsdetails.component';
 
 @NgModule({
-  declarations: [PatientsComponent],
+  declarations: [PatientsComponent, PatientsdetailsComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule

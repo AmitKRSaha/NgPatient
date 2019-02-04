@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientsComponent implements OnInit {
 
+  patientDetails: boolean;
   constructor() { }
 
   ngOnInit() {
-    alert('Ok');
+    this.patientDetails = false;
+  }
+
+  openPatientDetails() {
+    this.patientDetails = true;
   }
 
 }
