@@ -11,6 +11,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ![Second Page](https://github.com/AmitKRSaha/NgPatient/blob/master/src/assets/2.png)
 ![Third Page](https://github.com/AmitKRSaha/NgPatient/blob/master/src/assets/3.png)
 
+## Travis-Build
+[![Build Status](https://travis-ci.org/AmitKRSaha/NgPatient.svg?branch=master)]
+(https://travis-ci.org/AmitKRSaha/NgPatient.svg?branch=master)
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
