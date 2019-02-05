@@ -30,11 +30,13 @@
 
         </div>
 
-        <div class="btn_login" [ngClass]="username.valid && passwrd.valid? '' : 'disable'">
-          <p (click)="login()" *ngIf="!authService.isLoggedIn">Login</p>
-        </div>
+
         <!-- <button (click)="login()" *ngIf="!authService.isLoggedIn">Login</button>
     <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button> -->
       </div>
+      <div class="btn_login" [ngClass]="username.valid && passwrd.valid? '' : 'disable'">
+
+          <p (click)="login()" *ngIf="!authService.isLoggedIn"><img src="../../assets/right_arrow.png" height="40%" width="40%" ></p>
+        </div>
     </div>
   </div>

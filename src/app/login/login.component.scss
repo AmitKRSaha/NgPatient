@@ -1,4 +1,10 @@
-
+.layout {
+  height: 640px;
+  h2{
+    background-color: bisque;
+    padding: 2%;
+  }
+}
 .login{
   position: relative;
   text-align: center;
@@ -6,6 +12,10 @@
   margin: auto;
   background-color: white;
   border-bottom: 1px solid black;
+}
+
+.formcontrol{
+  margin-bottom: -4%;
 }
 
 .disable{
@@ -21,7 +31,7 @@ div{
   margin: 2%;
   .alert {
     margin: 1%;
-    width:50%;
+    width:60%;
     margin: auto;
   }
 }
