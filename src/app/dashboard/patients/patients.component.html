@@ -1,41 +1,41 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Dashboard</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Select User <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">{{login_Name}}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Log Out</a>
-        </li>
+  <a class="navbar-brand" href="#">Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Select User <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">{{login_Name}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Log Out</a>
+      </li>
 
-      </ul>
-    </div>
-  </nav>
+    </ul>
+  </div>
+</nav>
 
-  <div class="row">
-    <div class="col-md-3 col-ls-4">
-        <div class="list-group">
-            <div  class="list-group-item list-group-item-action disabled list-header">
-              Patient List
-            </div>
-            <div *ngFor="let patient of patients">
-               <button type="button" class="list-group-item list-group-item-action"  (click)='openPatientDetails(patient)'>
-                {{patient.Name}}
-              </button></div>
-
-          </div>
-    </div>
-    <div class="col-md-9  col-ls-8" *ngIf='detailsView'>
-    <app-patientsdetails [patientDetail] = "patientDetail"></app-patientsdetails>
+<div class="row">
+  <div class="col-md-3 col-ls-4">
+    <div class="list-group">
+      <div class="list-group-item list-group-item-action disabled list-header">
+        Patient List
+      </div>
+      <div *ngFor="let patient of patients">
+        <button type="button" class="list-group-item list-group-item-action" (click)='openPatientDetails(patient)'>
+          {{patient.Name}}
+        </button></div>
 
     </div>
+  </div>
+  <div class="col-md-9  col-ls-8" *ngIf='detailsView'>
+    <app-patientsdetails [patientDetail]="patientDetail"></app-patientsdetails>
 
   </div>
 
+</div>

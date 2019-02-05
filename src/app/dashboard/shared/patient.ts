@@ -4,6 +4,6 @@ export class Patient {
   Age: number;
   Doctor: string;
   Address: string;
-  IsNormal: number;
+  IsNormal: string;
   imageUrl: string;
 }

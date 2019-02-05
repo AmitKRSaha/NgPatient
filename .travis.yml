@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "10"
+dist: trusty
+addons:
+  chrome: stable
+env:
+  global:
+    - CC_TEST_REPORTER_ID=63d6a694555914e82816080556dd4cda4c1cd8ca39e0b0681dc5a48e66e58631
+
+addons:
+    code_climate:
+        repo_token: 761b615b0339c52cf9d7ceb0eba5819f278c0e74eeebc3f70040f12b89514cd4
+script: istanbul cover node_modules/mocha/bin/_mocha -- -R spec
+before_script:
+  - npm install codeclimate-test-reporter istanbul -g
+after_script:
+  - codeclimate-test-reporter < ./coverage/lcov.info
