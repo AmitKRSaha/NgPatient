@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
 
   message: string;
   name: string;
+  password: string;
+  enaleLoginButton: Boolean;
 
   constructor( public authService: AuthService, public router: Router) {
     this.setMessage();
@@ -22,6 +24,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
+    this.enaleLoginButton = false;
   }
 
 

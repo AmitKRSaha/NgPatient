@@ -8,8 +8,22 @@
   border-bottom: 1px solid black;
 }
 
+.disable{
+  cursor: not-allowed;
+  pointer-events: none;
+
+  /*Button disabled - CSS color class*/
+  color: #c0c0c0;
+  background-color: #ffffff;
+
+  }
 div{
   margin: 2%;
+  .alert {
+    margin: 1%;
+    width:50%;
+    margin: auto;
+  }
 }
 
 
@@ -19,7 +33,7 @@ input {
   height: 30px;
   border: none;
   border-style: solid;
-  border-width: 0px 0px 2px 0px;
+  border-width: 0px 0px 1px 0px;
 
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
