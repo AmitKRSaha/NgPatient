@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PatientService } from '../shared/patient.service';
 import { Patient } from '../shared/patient';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-patients',
@@ -12,12 +13,16 @@ export class PatientsComponent implements OnInit {
   patients: any[];
   detailsView: boolean;
   patientDetail: Patient;
+  login_Name: string;
+  private paramsSubscription: Subscription;
   constructor(private patientService: PatientService) { }
 
   ngOnInit() {
     this.detailsView = false;
-    this.patientService.getPatients().subscribe(data => {
+    this.paramsSubscription = this.patientService.getPatients().subscribe(data => {
       this.patients = data;
+      this.login_Name = localStorage.getItem('name');
+
     });
   }
 
@@ -30,6 +35,10 @@ export class PatientsComponent implements OnInit {
         this.patientDetail = (this.patients[i]);
       }
     }
+  }
+
+  OnDestroy() {
+    this.paramsSubscription.unsubscribe();
   }
 
 }

@@ -10,6 +10,7 @@ import { AuthService } from '../auth/auth.service';
 export class LoginComponent implements OnInit {
 
   message: string;
+  name: string;
 
   constructor( public authService: AuthService, public router: Router) {
     this.setMessage();
@@ -26,6 +27,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.message = 'Trying to log in ...';
+    if (this.name) {
+      localStorage.setItem('name', this.name);
+    }
 
     this.authService.login('/patients').subscribe(() => {
       this.setMessage();

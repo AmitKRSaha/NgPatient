@@ -4,7 +4,12 @@
   <div class="formcontrol">
     <p> User Name</p>
     <div>
-      <input  type="email" placeholder="a@mail.com" required>
+      <!-- <input  type="email" placeholder="a@mail.com" required> -->
+      <input id="name" name="name" type="name" placeholder="Name"
+      required minlength="4" appForbiddenName="bob"
+      [(ngModel)]="name" >
+
+
     </div>
     <div>
       <input type="password" placeholder="12345" required>
