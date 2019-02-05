@@ -11,7 +11,7 @@ env:
 addons:
     code_climate:
         repo_token: 761b615b0339c52cf9d7ceb0eba5819f278c0e74eeebc3f70040f12b89514cd4
-script: istanbul cover node_modules/karma/bin/karma start --browsers Firefox --single-run
+script: istanbul cover node_modules/karma/bin/karma start --single-run --browsers PhantomJS
 before_script:
   - npm install codeclimate-test-reporter istanbul -g
 after_script:
