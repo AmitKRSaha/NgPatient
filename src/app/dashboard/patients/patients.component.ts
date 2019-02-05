@@ -10,17 +10,26 @@ import { Patient } from '../shared/patient';
 export class PatientsComponent implements OnInit {
 
   patients: any[];
-  patientDetails: boolean;
+  detailsView: boolean;
+  patientDetail: Patient;
   constructor(private patientService: PatientService) { }
 
   ngOnInit() {
-    this.patientDetails = false;
-    this.patientService.getPatients().subscribe(data => {this.patients = data; });
+    this.detailsView = false;
+    this.patientService.getPatients().subscribe(data => {
+      this.patients = data;
+    });
   }
 
   openPatientDetails(value) {
-    this.patientDetails = true;
-    // this.patientService.patientById(value);
+    this.detailsView = true;
+
+    // this.patientService.patientById(this.patients, value.Id);
+    for (let i = 0 ; i < this.patients.length; i++) {
+      if (this.patients[i]['Id'] === value.Id) {
+        this.patientDetail = (this.patients[i]);
+      }
+    }
   }
 
 }

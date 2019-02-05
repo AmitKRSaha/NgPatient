@@ -5,6 +5,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Patient } from './patient';
 import { pipe } from '@angular/core/src/render3';
+import { PatientsComponent } from '../patients/patients.component';
 
 
 @Injectable({
@@ -16,7 +17,7 @@ export class PatientService {
     private http: HttpClient) { }
 
   // Observable string sources
-  private patients = new Subject<string>();
+  private patients = new Subject<Patient>();
   private apiHost = '../../../assets/patient-detail.json';
   private patientdetail: Patient[];
 
@@ -29,9 +30,13 @@ export class PatientService {
 
   }
 
-  // patientById(id: number):  Observable<Patient[]> {
-  //   return of('abc');
-  // }
+  patientById(patient: Patient[], id: number):  any {
+    for (let i = 0 ; i < patient.length; i++) {
+      if (patient[i]['Id'] === id) {
+        return this.patients.next(patient[i]);
+      }
+    }
+  }
 
 
 }

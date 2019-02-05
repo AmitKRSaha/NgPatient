@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PatientService } from '../shared/patient.service';
+import { Patient } from '../shared/patient';
 
 @Component({
   selector: 'app-patientsdetails',
@@ -8,11 +9,10 @@ import { PatientService } from '../shared/patient.service';
 })
 export class PatientsdetailsComponent implements OnInit {
 
-  id: string;
-  constructor(private patientService: PatientService) { }
+  @Input() patientDetail: Patient;
+  constructor(public patientService: PatientService) { }
 
   ngOnInit() {
-    //  this.patientService.missionAnnounced$.subscribe(x => this.id = x);
   }
 
 }

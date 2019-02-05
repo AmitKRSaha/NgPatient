@@ -32,8 +32,8 @@
 
           </div>
     </div>
-    <div class="col-md-9  col-ls-8" *ngIf='patientDetails'>
-    <app-patientsdetails></app-patientsdetails>
+    <div class="col-md-9  col-ls-8" *ngIf='detailsView'>
+    <app-patientsdetails [patientDetail] = "patientDetail"></app-patientsdetails>
 
     </div>
 
