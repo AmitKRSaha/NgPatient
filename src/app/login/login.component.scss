@@ -4,15 +4,30 @@
     background-color: bisque;
     padding: 2%;
   }
+
+  .login{
+    position: relative;
+    text-align: center;
+    width: 1020px;
+    margin: auto;
+    background-color: white;
+    border-bottom: 1px solid black;
+  }
+
+  input {
+    width: 60%;
+    margin: 2%;
+    height: 30px;
+    border: none;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+  }
 }
-.login{
-  position: relative;
-  text-align: center;
-  width: 1020px;
-  margin: auto;
-  background-color: white;
-  border-bottom: 1px solid black;
-}
+
 
 .formcontrol{
   margin-bottom: -4%;
@@ -38,17 +53,7 @@ div{
 
 
 
-input {
-  width: 60%;
-  height: 30px;
-  border: none;
-  border-style: solid;
-  border-width: 0px 0px 1px 0px;
 
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: large;
-}
 
 .btn_login{
   background-color: bisque;

@@ -2,6 +2,9 @@
   <div class="login">
     <h2>LOGIN</h2>
     <p>{{message}}</p>
+    <div *ngIf="spinOn" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
     <div class="formcontrol">
       <p> User Name</p>
       <div>
@@ -37,6 +40,6 @@
       <div class="btn_login" [ngClass]="username.valid && passwrd.valid? '' : 'disable'">
 
           <p (click)="login()" *ngIf="!authService.isLoggedIn"><img src="../../assets/right_arrow.png" height="40%" width="40%" ></p>
-        </div>
+      </div>
     </div>
   </div>

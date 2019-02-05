@@ -13,13 +13,14 @@ export class LoginComponent implements OnInit {
   name: string;
   password: string;
   enaleLoginButton: Boolean;
+  spinOn: boolean;
 
   constructor( public authService: AuthService, public router: Router) {
     this.setMessage();
   }
 
   setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
+    // this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
   }
 
 
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.message = 'Trying to log in ...';
+    this.spinOn = true;
     if (this.name) {
       localStorage.setItem('name', this.name);
     }
@@ -40,6 +42,7 @@ export class LoginComponent implements OnInit {
         // Get the redirect URL from our auth service
         // If no redirect has been set, use the default
         const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/login';
+        this.spinOn = false;
 
         // Redirect the user
         this.router.navigate([redirect]);
