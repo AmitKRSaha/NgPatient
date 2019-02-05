@@ -1,5 +1,8 @@
 # NgPatient
 
+## Travis-Build
+![Build Status](https://travis-ci.org/AmitKRSaha/NgPatient.svg?branch=master)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
 ## Development server
@@ -11,8 +14,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ![Second Page](https://github.com/AmitKRSaha/NgPatient/blob/master/src/assets/2.png)
 ![Third Page](https://github.com/AmitKRSaha/NgPatient/blob/master/src/assets/3.png)
 
-## Travis-Build
-![Build Status](https://travis-ci.org/AmitKRSaha/NgPatient.svg?branch=master)
+
 
 ## Code scaffolding
 
