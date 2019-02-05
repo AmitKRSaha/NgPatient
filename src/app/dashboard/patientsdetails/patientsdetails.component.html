@@ -1,4 +1,25 @@
-<p>
-  patientsdetails works!
-</p>
-{{ patientDetail.Name}}
+<div class="container">
+  <div class="row heading">
+    <div class="col-md-2">Name</div>
+    <div class="col-md-2">Age</div>
+    <div class="col-md-2">Address</div>
+    <div class="col-md-2">Doctor</div>
+    <div class="col-md-2">IsNormal</div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">{{ patientDetail.Name}}</div>
+    <div class="col-md-2">{{ patientDetail.Age}}</div>
+    <div class="col-md-2">{{ patientDetail.Address}}</div>
+    <div class="col-md-2">{{ patientDetail.Doctor}}</div>
+    <div class="col-md-2">{{ patientDetail.IsNormal}}</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <img [src]='patientDetail.imageUrl' title="Patient Old State" />
+  </div>
+  <div class="col-md-6">
+    <img [src]='patientDetail.imageUrl' title="Patient New State" />
+  </div>
+</div>
